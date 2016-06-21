@@ -1,0 +1,33 @@
+Note/Cheatsheet:
+1. df.pivot_table('prop',index='year',columns='sex',aggfunc=sum)
+or
+df.pivot_table('births',index=last_letters,columns=['sex','year'],aggfunc=sum)
+*Turns column values in different rows into column names
+2. df.sort_values(by='prop',ascending=False)
+*Sorts a dataframe by certain column
+3. pd.plot(subplots=True,figsize=(12,10),grid=False,title="Number of births per year")
+*Plot each Series in the dataframe
+4. df.groupby(['year','sex'])
+*Turn dataframe into certain groups using columns
+5. df.concat(pieces, ignore_index=True)
+*Merge multiple dataframes into one
+6. np.cumsum(a=columnA)/df.columnA.cumsum()
+*Calculate the cumulative sum of columnA
+7. np.searchsorted(array,value)/Series.searchsorted(value)
+*Return the index of the given value in the array/Serirs
+8. def get_top1000(group):
+       return group.sort_values(by='births',ascending=False)[:1000]
+    
+   top1000 = names.groupby(['year','sex']).apply(get_top1000)
+*Define a function that will make changes to each group, then "groupby" a datagrame, then apply the defined function to each group in the GroupBy ojbect
+9. get_last_letter = lambda x: x[:-1]
+last_letters = names.name.map(get_last_letter)
+*Using lambda to define a function, then run the function using map()
+10. df.reindex(columns=[1910,1960,2010],level='year')
+*Since years are the second level columns, it's hard to use column names to get the subset, so reindex can set the column level and get the subset
+11. 
+import matplotlib.pyplot as plt
+figs, axes = plt.subplots(2,1,figsize=(10,8)) # 2,1 means 2x1 grid
+letter_prop['M'].plot(kind='bar',rot=0,ax=axes[0],title='Male')
+letter_prop['F'].plot(kind='bar',rot=0,ax=axes[1],title='Female',legend=False)
+*When there are multiple levels of columns, pandas.plot cannot handle it, we can use matplotlib to do it by setting the subplots separately. 
