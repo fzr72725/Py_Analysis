@@ -31,3 +31,12 @@ figs, axes = plt.subplots(2,1,figsize=(10,8)) # 2,1 means 2x1 grid
 letter_prop['M'].plot(kind='bar',rot=0,ax=axes[0],title='Male')
 letter_prop['F'].plot(kind='bar',rot=0,ax=axes[1],title='Female',legend=False)
 *When there are multiple levels of columns, pandas.plot cannot handle it, we can use matplotlib to do it by setting the subplots separately. 
+12.
+
+13. mask = np.array(['lesl' in x.lower() for x in all_names])
+lesly_like = all_names[mask]
+*Returns boolean values; then mask can be applied to an array to get all elements that met "True"
+14. table.plot(style={'M':'k-','F':'k--'})
+*Draw in different styles
+15. %timeit
+* Put in front of a statement to measure the running time of it
