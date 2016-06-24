@@ -40,3 +40,9 @@ lesly_like = all_names[mask]
 *Draw in different styles
 15. %timeit
 * Put in front of a statement to measure the running time of it
+
+
+p118
+18. dataframe.T
+* Tranposes the dataframe, meaning switch columns and rows
+p125
