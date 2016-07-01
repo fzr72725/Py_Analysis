@@ -31,18 +31,34 @@ figs, axes = plt.subplots(2,1,figsize=(10,8)) # 2,1 means 2x1 grid
 letter_prop['M'].plot(kind='bar',rot=0,ax=axes[0],title='Male')
 letter_prop['F'].plot(kind='bar',rot=0,ax=axes[1],title='Female',legend=False)
 *When there are multiple levels of columns, pandas.plot cannot handle it, we can use matplotlib to do it by setting the subplots separately. 
-12.
-
-13. mask = np.array(['lesl' in x.lower() for x in all_names])
-lesly_like = all_names[mask]
-*Returns boolean values; then mask can be applied to an array to get all elements that met "True"
-14. table.plot(style={'M':'k-','F':'k--'})
-*Draw in different styles
-15. %timeit
-* Put in front of a statement to measure the running time of it
-
-
-p118
+12. letter_drop.ix[['d','n','y'],'M'].T
+* ix can use either label or index to access dataframe rows
+13. Series.values
+Series.index
+obj = Series([4,5,-7,3],index=['d','a','b','c'])
+* Creates a Series object with specific index, this is desirable
+14. sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
+obj = Series(sdata)
+*Create a Series object based on a dictionary, the dictionary key will be turned into index. A Series object can be treated as dictionary
+15. pd.isnull(<a Series object>)
+*Returns a Series object of boolean values, index of the examined Series object is still the index of the result Series object
+16. 
+data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada'], 'year': [2000, 2001, 2002, 2001, 2002],
+'pop': [1.5, 1.7, 3.6, 2.4, 2.9]}
+frame = DataFrame(data)
+*Creates dataframe from dictionaries with lists that have equal length, and you can specify the sequence of the columns by doing this: frame = DataFrame(data, columns=['year','state','pop'])
+17. frame2['state']
+frame2.year
+*Two ways of retrieving a column from a dataframe
 18. dataframe.T
 * Tranposes the dataframe, meaning switch columns and rows
-p125
+19. df.describe()
+*Returns a bunch of statistical information about a dataframe values
+20. dataframe.pct_change()
+*Calculate the percent change in the dataframe for all columns
+21.Series1.corr(Series2); Series1.cov(Series2)
+*corr() Calculates the correlation of the two series(or two columns of a dataframe)
+*cov() Calculates the covariance of the two series(or two columns of a dataframe)
+22. DataFrame.corr();DataFrame.cov()
+* similar to above, but return the whole matrix of all columns
+p140_20160630
