@@ -61,4 +61,13 @@ frame2.year
 *cov() Calculates the covariance of the two series(or two columns of a dataframe)
 22. DataFrame.corr();DataFrame.cov()
 * similar to above, but return the whole matrix of all columns
-p140_20160630
+23. DataFrame.isnull()/DataFrame.notnull()/DataFrame.dropna()/DataFrame.fillna()
+* how dataframe deals with missing values
+* missing value can be set using "np.nan"
+24. DataFrame.fillna(DataFrame.mean())
+* Fill na values with the mean of the data
+25. dataframe.unstack()
+* transform a multiple hierachy indexing dataframe into a one-level dataframe
+p151_20160713
+
+
