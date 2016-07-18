@@ -68,6 +68,8 @@ frame2.year
 * Fill na values with the mean of the data
 25. dataframe.unstack()
 * transform a multiple hierachy indexing dataframe into a one-level dataframe
-p151_20160713
+26. JSON:
+All keys in json object must be strings.
 
+p168
 
