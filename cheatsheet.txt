@@ -70,6 +70,11 @@ frame2.year
 * transform a multiple hierachy indexing dataframe into a one-level dataframe
 26. JSON:
 All keys in json object must be strings.
+27. pd.ExcelFile('data.xls')
+* pandas read in excel file as dataframe
+28. pd.merge(df1,df2)
+* join 2 dataframes using certain column(s)
+29. pd.merge(left1, right1, left_on='key', right_index=True)
+* merge on index, the example is saying that the index should be used as the merge key
 
-p168
-
+p184
