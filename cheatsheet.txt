@@ -76,5 +76,35 @@ All keys in json object must be strings.
 * join 2 dataframes using certain column(s)
 29. pd.merge(left1, right1, left_on='key', right_index=True)
 * merge on index, the example is saying that the index should be used as the merge key
+30. arr = np.arange(12).reshape((3, 4))
+* Create a matrix with integers
+31. np.concatenate([arr,arr],axis=1)
+* Merge 2 numpy arrays on the column axis
+32. pd.concat([s1,s2,s3],axis=1,join='inner')
+* Merge dataframes column by column (if leave axis blank, by default, it merge row by row, axis=0)
+*(if leave join blank, by default, it does outer join)
+33. pd.concat([s1, s1, s3], keys=['one', 'two', 'three'])
+* Create hierarchical index for cancatenated objects
+34. np.where(pd.isnull(a), b, a)
+* Form a new dataframe, when condition is met(a.element is null in this case), get element from object 1(b in thise case), else, get element from object 2(a in this case)
+35. df1.combine_first(df2)
+* “patching” missing data in the calling object with data from the object you pass
+36. df.stack()
+* Turn column names into row values, this is different from T
+37. df.unstack()
+* Turn index values into column names
+* The general idea of stack() and unstack() is just "index<=>column name"
 
-p184
+p192
+
+
+
+
+
+
+
+
+
+
+
+
