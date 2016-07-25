@@ -94,9 +94,14 @@ All keys in json object must be strings.
 37. df.unstack()
 * Turn index values into column names
 * The general idea of stack() and unstack() is just "index<=>column name"
+38. df.duplicated()
+* Returns boolean Series to indicate if an element in the dataframe is duplicate
+39. df.drop_duplicates()
+* dedupe
+40. Series.map(normally Series is a dataframe column)
+* colume-wise data transformation, see page 196
 
-p192
-
+page 199
 
 
 
