@@ -100,8 +100,16 @@ All keys in json object must be strings.
 * dedupe
 40. Series.map(normally Series is a dataframe column)
 * colume-wise data transformation, see page 196
+41. pd.cut(ages, bins)
+* Put elements in an array into a pre-defined "bin" to categories the elements
+42. np.sign(dataframe)
+* Return an array of 1 and -1 depending on the sign of the values in the target dataframe
+43. DataFrame(np.random.randn(1000,4))/DataFrame(np.arange(6).reshape(3,2))
+*Two ways of creating dataframe using random numbers
+44. pd.get_dummies(df['key']v prefix='key')
+* key column is a categorical variable with k values, this method convert it to a k-column dataframe
 
-page 199
+page 206
 
 
 
