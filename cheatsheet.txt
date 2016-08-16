@@ -3,12 +3,19 @@ Note/Cheatsheet:
 or
 df.pivot_table('births',index=last_letters,columns=['sex','year'],aggfunc=sum)
 *Turns column values in different rows into column names
+1.5 pd.read_csv(url,nams=['column1','column2'])
+* use term "names" to assign column names
 2. df.sort_values(by='prop',ascending=False)
 *Sorts a dataframe by certain column
 3. pd.plot(subplots=True,figsize=(12,10),grid=False,title="Number of births per year")
 *Plot each Series in the dataframe
 4. df.groupby(['year','sex'])
 *Turn dataframe into certain groups using columns
+4.5 df.groupby('stars').mean()
+* groupby a variable, then get means for other variables in each group
+4.6 df.groupby(['feature']).groups
+* Check each group
+
 5. df.concat(pieces, ignore_index=True)
 *Merge multiple dataframes into one
 6. np.cumsum(a=columnA)/df.columnA.cumsum()
@@ -37,6 +44,8 @@ letter_prop['F'].plot(kind='bar',rot=0,ax=axes[1],title='Female',legend=False)
 Series.index
 obj = Series([4,5,-7,3],index=['d','a','b','c'])
 * Creates a Series object with specific index, this is desirable
+13.5 glass.glass_type.value_counts().sort_index()
+* Get counts for each value, then sort the counts
 14. sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
 obj = Series(sdata)
 *Create a Series object based on a dictionary, the dictionary key will be turned into index. A Series object can be treated as dictionary
