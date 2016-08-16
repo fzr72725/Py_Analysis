@@ -13,6 +13,9 @@ df.pivot_table('births',index=last_letters,columns=['sex','year'],aggfunc=sum)
 *Turn dataframe into certain groups using columns
 4.5 df.groupby('stars').mean()
 * groupby a variable, then get means for other variables in each group
+4.6 df.groupby(['feature']).groups
+* Check each group
+
 5. df.concat(pieces, ignore_index=True)
 *Merge multiple dataframes into one
 6. np.cumsum(a=columnA)/df.columnA.cumsum()
