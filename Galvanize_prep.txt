@@ -1,0 +1,53 @@
+201707:
+Python note:
+1. List comprehension:
+result = [x+10 for x in my_list]
+
+a = list('abcdefghijklmnopqrstuvwxyz')
+b = list('phqgiumeaylnofdxjkrcvstzwb')
+d = {x:y for x,y in zip(a,b)}
+
+2. File operation:
+my_file = open('hello.txt')
+t = my_file.read()
+
+# function strip is to remove \n
+[l.strip() for l in my_file]
+
+3. word/letter counter:
+from collections import Counter
+c = Counter(content)
+* output is a dictionary
+
+4. Set:
+my_set = set(content)
+* set is to have a unique element collection
+
+5. Dictionary:
+my_dict = dict((key,0) for key in my_set)
+
+6. Other operation:
+m += 1
+
+string.lower()
+
+function join is to turn a list into a string connected with specific char('' is no connector)
+''.join(list)
+
+print [x for x in range (1,5)]
+*[1, 2, 3, 4]
+
+print [i for i in range(8, 0, -1)]
+[8, 7, 6, 5, 4, 3, 2, 1]
+
+Algorithm note:
+1. Sorting:
+* total number of value comparison and position exchange determine the efficiency of a sorting algo.
+1) Bubble sort
+def bubbleSort(alist):
+    for passnum in range(len(alist)-1,0,-1):
+        for i in range(passnum):
+            if alist[i]>alist[i+1]:
+                alist[i],alist[i+1] = alist[i+1],alist[i]
+    return alist
+
