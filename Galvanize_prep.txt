@@ -51,3 +51,52 @@ def bubbleSort(alist):
                 alist[i],alist[i+1] = alist[i+1],alist[i]
     return alist
 
+2) Selection sort:
+* Compare to bubble sort, selection sort reduce the exchange effort, each round, exchange only happen ONCE
+* Each round, only the largest element is put to the last position of the list
+def selectionSort(my_list):
+    for index in range(len(my_list)-1,0,-1):
+        largest = 0
+        print index
+        for idx in range(1,index+1):
+            if my_list[idx]>my_list[largest]:
+                largest = idx
+        my_list[largest],my_list[index] = my_list[index],my_list[largest]
+    return my_list
+    
+3) Insertion sort:
+
+
+
+Statistics:
+1. Permutation:
+1) In general, n distinct objects can be arranged in n! ways.
+2) The number of permutations of n distinct objects taken r at a time, Pnr=n*(n-1)*(n-2)...*(n-(r-1))
+3) The number of different permutations of n objects of which n1 are of one kind, n2 are of a second kind, ... nk are of a k-th kind is n!/(n1!*n2!*...nk!)
+4) There are \displaystyle{\left({n}-{1}\right)}!(n−1)! ways to arrange n distinct objects in a circle (where the clockwise and anti-clockwise arrangements are regarded as distinct.)
+
+2. Combination:
+1) Cnr=Pnr/r!
+2) Cn0=Cnn=1
+3) Cnr=Cn(n-r)
+
+3. Probability terms:
+1)Experiment: This is any process of observation or procedure that:
+
+-Can be repeated (theoretically) an infinite number of times; and
+
+-Has a well-defined set of possible outcomes.
+
+2)Sample space: This is the set of all possible outcomes of an experiment.
+
+3)Event: This is a subset of the sample space of an experiment.
+
+
+4. Common probability problems:
+1) Lottery odds:
+http://www.intmath.com/counting-probability/singapore-toto.php
+2) 
+
+
+
+
