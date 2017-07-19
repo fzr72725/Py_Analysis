@@ -108,6 +108,16 @@ Statistics:
 http://www.intmath.com/counting-probability/singapore-toto.php
 2) 
 
+5. Conditional probability:
+P(A|B): If A and B are two events, the probability that A occurs given that B has occurred
+P(A|B)<student is French if he's female> = P(A⋂B)<student is French and female>/P(B)<student is female>
 
+6. Independent probability:
+P(A⋂B) = P(A)*P(B)
 
+7. Other probability:
+P(A or B) = P(A)+P(B)-P(A⋂B)
 
+8. Bayes' Therom:
+If E1 and E2 are mutually exclusive:
+P(E1∣E)=P(E1⋂E)/[P(E2⋂E)+P(E1⋂E)]
