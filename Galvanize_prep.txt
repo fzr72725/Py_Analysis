@@ -112,12 +112,112 @@ http://www.intmath.com/counting-probability/singapore-toto.php
 P(A|B): If A and B are two events, the probability that A occurs given that B has occurred
 P(A|B)<student is French if he's female> = P(A⋂B)<student is French and female>/P(B)<student is female>
 
-6. Independent probability:
+6. Independent and dependent probability:
+1) Indepedent:
 P(A⋂B) = P(A)*P(B)
+2) Dependent:
+P(A⋂B) = P(A)*P(B|A) = P(A)*P(B⋂A)/P(A)
+* mutually exclusive events are NEVER independent, if A and B are mutually exclusive, P(A⋂B) = 0
 
-7. Other probability:
+7. non mutually exclusive events probability:
 P(A or B) = P(A)+P(B)-P(A⋂B)
 
 8. Bayes' Therom:
 If E1 and E2 are mutually exclusive:
 P(E1∣E)=P(E1⋂E)/[P(E2⋂E)+P(E1⋂E)]
+
+9. If use conditional probability or P(A or B):
+See if the given probability is describing seperate events (there are steps), if so, conditional probability, if not, like defective check, it's P(A or B)
+
+10. Steps of solve a problem:
+1) define all events
+2) determine the relations between events(independent events<IE>/dependent events<DE>/ME/non-ME)
+3) use appropriate formula:
+IE:
+P(A⋂B) = P(A)*P(B)
+P(A or B) = P(A)+P(B)-P(A⋂B)
+
+DE:
+P(A⋂B) = P(A)*P(B|A) = P(A)*P(B⋂A)/P(A)
+P(A or B) = P(A)+P(B)-P(A⋂B)
+
+ME:
+P(A⋂B) = 0
+P(A or B) = P(A)+P(B)
+
+non_ME:
+P(A⋂B) = P(A)*P(B|A) = P(A)*P(B⋂A)/P(A)
+P(A or B) = P(A)+P(B)-P(A⋂B)
+
+11. Probability Distributions:
+1) Random Variables
+P(X) or P(x1), P(x2)...
+2) Discrete probability distribution:
+
+
+3)Probability density function:
+* the area under the bell curve between two variables, The area under each curve is \displaystyle{1}1
+∫abf(x)dx=P(a≤X≤b)
+
+4)Probabilities As Relative Frequency
+* If an experiment is performed a sufficient number of times, then in the long run, the relative frequency of an event is called the probability of that event occurring.
+
+5) Expected Value:
+* X represent a discrete random variable
+E(X) = μ = Σ (xi × P(xi))
+* is also called the mean of the probability distribution
+
+4) Variance of a Random Variable
+V(X) = σ2 = Σ[{X − E(X)}2 × P(X) ]
+
+5) Standard Deviation of the Probability Distribution
+σ=√V(X)
+* describes the spread of the distribution. Small standard deviation means small spread, large standard deviation means large spread
+
+12. The Binomial Probability Distribution
+Binomial variable: only two kinds of outcome: true vs. false; yes vs. no, etc
+1) the probability of successes in n binomial trials:
+http://www.intmath.com/counting-probability/12-binomial-probability-distributions.php
+
+2) Mean and Variance of Binomial Distribution:
+E(X) = μ = np
+V(X) = σ2 = npq
+
+13. The Poisson Probability Distribution
+
+
+
+
+
+
+XX. Modeling:
+1) Linear Regression:
+Predict a dependent continuous vale
+
+2) Logistic Regression:
+Predict the probability of a value, bounded between (0,1)
+* Changing the $\beta_0$ value shifts the curve horizontally, whereas changing the $\beta_1$ value changes the slope of the curve.
+
+3) Cross Validation (CV):
+- CV is used to select the best model to train. Here, "two different models" would be: linear regression vs neural network. Once we have used cross-validation to select the better performing model, we train that model (whether it be the linear regression or the neural network) on all the data. 
+- k-folder CV: k iterations over the sample data using a proportion for training and CV
+- After k-fold cross validation, we’ll get k different model estimation errors (e1, e2 …..ek)(MSE for quantitative responses, misclassification rate for qualtative responses). Then we take standard deviation of all errors. Lower value of standard deviation suggests our model does not vary a lot with different subset of training data.
+4) Over-fitting:
+Over-fitting is normally caused by high model complexity over the training data.
+5) Bias–variance tradeoff:
+- Error due to Bias: The error due to bias is taken as the difference between the expected (or average) prediction of our model and the correct value which we are trying to predict.
+high bias = underfitting
+- Error due to Variance: The error due to variance is taken as the variability of a model prediction for a given data point.(the variance from k-folder CV for example)
+high variance = overfitting
+6)
+
+7)Ways to measure accuracy of linear regression model:
+- MAE: mean of error
+- MSE: mean of error square(variance)
+- RMSE: mean of standard diviation
+
+
+
+ 
+ 
+ 
