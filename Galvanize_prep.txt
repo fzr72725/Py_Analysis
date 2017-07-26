@@ -43,6 +43,15 @@ print [i for i in range(8, 0, -1)]
 print range(5,-1,-1)
 [5, 4, 3, 2, 1, 0]
 
+7. pandas:
+*to plot lists:
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.plot(x,y)
+
+
+
+
 Algorithm note:
 1. Sorting:
 * total number of value comparison and position exchange determine the efficiency of a sorting algo.
@@ -183,20 +192,54 @@ http://www.intmath.com/counting-probability/12-binomial-probability-distribution
 E(X) = μ = np
 V(X) = σ2 = npq
 
+3) Binomial probability distribution is always finite. You can only have a finite number of x.
+
 13. The Poisson Probability Distribution
+http://www.intmath.com/counting-probability/13-poisson-probability-distribution.php
+Time of success in two disjoint time intervals are independent
+- car accident
+- death rate in army due to horse kicking
+- birth defect or mutation
+
+E(X) = μ
+V(X) = μ
+
+14. Exponential distribution:
+P(X) = λ e**(−λx)
+
+15. Uniform Distribution:
+P(X) = 1(b-a) if x is in [a,b], otherwise, P(X) = 0
+
+16. Normal distribution:
+1) How to calculate probability of normal distribution:
+The probability of P(x < a) is: Φ(a)
+The probability of P(x > a) is: 1 – Φ(a)
+The probability of P(a < Z < b) is: Φ(b) – Φ(a)
 
 
+2) empirical/three-sigma rule:
+for a normal distribution:
+68% of the data will fall within one standard deviation of the mean.
+95% of the data will fall within two standard deviations of the mean.
+Almost all (99.7%) of the data will fall within three standard deviations of the mean
 
+17. Descriptive Statistics
+IQR= Q3-Q1
+mode is the value of the number which appears the most frequent.
 
+19. Relationship between 2 quantitative variables:
+y = a+bx
+b = Slope = (N∑XY - (∑X)(∑Y)) / (N∑X**2 - (∑X)**2)
+a = mean(Y)-bmean(X)
 
-
-XX. Modeling:
+20. Modeling:
 1) Linear Regression:
 Predict a dependent continuous vale
 
 2) Logistic Regression:
 Predict the probability of a value, bounded between (0,1)
 * Changing the $\beta_0$ value shifts the curve horizontally, whereas changing the $\beta_1$ value changes the slope of the curve.
+* Positive coefficients increase the log-odds of the response (and thus increase the probability), and negative coefficients decrease the log-odds of the response (and thus decrease the probability).
 
 3) Cross Validation (CV):
 - CV is used to select the best model to train. Here, "two different models" would be: linear regression vs neural network. Once we have used cross-validation to select the better performing model, we train that model (whether it be the linear regression or the neural network) on all the data. 
@@ -209,15 +252,25 @@ Over-fitting is normally caused by high model complexity over the training data.
 high bias = underfitting
 - Error due to Variance: The error due to variance is taken as the variability of a model prediction for a given data point.(the variance from k-folder CV for example)
 high variance = overfitting
-6)
+6)Interpret coefficient:
+Interpreting the "temp" coefficient ($\beta_1$):
+It is the change in y divided by change in x, or the "slope".
+Thus, a temperature increase of 1 degree Celsius is associated with a rental increase of 9.17 bikes.
+This is not a statement of causation.
+$\beta_1$ would be negative if an increase in temperature was associated with a decrease in rentals.
 
 7)Ways to measure accuracy of linear regression model:
 - MAE: mean of error
 - MSE: mean of error square(variance)
 - RMSE: mean of standard diviation
+- Cross Validation: evaluating the variance/different models
 
 
-
- 
+21. Sensitivity and Specificity:
+- True positive rate (or sensitivity): TPR=TP/(TP+FN)TPR=TP/(TP+FN)
+- False positive rate: FPR=FP/(FP+TN)FPR=FP/(FP+TN)
+- True negative rate (or specificity): TNR=TN/(FP+TN)
+https://stats.stackexchange.com/questions/61829/relation-between-true-positive-false-positive-false-negative-and-true-negative
+- ROC curve plots TP and TN when using different predicting positive threshold 
  
  
