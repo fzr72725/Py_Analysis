@@ -1,0 +1,50 @@
+Baseline: 32 quotes out of 595 viewers
+Variation 1: 30 quotes out of 599 viewers
+Variation 2: 18 quotes out of 622 viewers
+Variation 3: 51 quotes out of 606 viewers
+Variation 4: 38 quotes out of 578 viewers
+
+Based on the information given in the problem description, here is the structure of a request form:
+category,location
+
+What questions would you ask me about my goals and methodology?
+1) How did you divide the 3000 requests among the four variations quantitatively? Evenly or unevenly?
+2) How many requests did you generate the baseline numbers from?
+3) What's the relationship between request and provider? 1:1, 1:Many, Many:1 or Many to Many? (For example, "Many:Many" means that one request can be sent to more than one providers, vice vsersa)
+
+
+Do you have any thoughts on the experimental design?
+1) Different values of request category and location should be distributed evenly in the four variation group. For example, if we have the following requets:
+category,location
+Catering,New York
+Catering,San Francisco
+Catering,Chicago
+Catering,Denver
+Personal,San Francisco
+Personal,New York
+Personal,Chicago
+Personal,Denver
+Design,Chicago
+Design,New York
+Design,San Francisco
+Design,Denver
+Babysitting,Denver
+Babysitting,New York
+Babysitting,San Francisco
+Babysitting,Chicago
+
+then EACH variation should get category: "Catering","Personal","Design" and "Babysitting" and location: "New York","San Francisco","Chicago" and "Denver"
+2)
+
+
+What's your interpretation of these results?
+To answer this question, I need to form the following assumptions:
+- Each variation got 750 requests
+- The relationship between request and provider is Many:Many, meaning one request can be sent to more than one providers, vice vsersa
+- Different values of request category and location are distributed evenly in the four variation group
+
+What conclusions would you draw?
+Based on the same assumption mentioned in my answer to the question above, here is my conclusion:
+
+
+Please provide statistical justification for your conclusions and explain the choices you made in your analysis.
