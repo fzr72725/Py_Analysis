@@ -231,11 +231,19 @@ Time of success in two disjoint time intervals are independent
 E(X) = μ
 V(X) = μ
 
+13.5 Geometric Distributions
+A geometric distribution models the number of tails before the first head in a sequence of
+coin flips (Bernoulli trials).
+P(X) = [(1-p)**k]P
+Here k is the number of tails before the first head, and the probability of having a head in a flip is p
+
 14. Exponential distribution:
 P(X) = λ e**(−λx)
 
 15. Uniform Distribution:
-P(X) = 1(b-a) if x is in [a,b], otherwise, P(X) = 0
+The uniform distribution models any situation where all the outcomes are equally likely. Examples: fair coins (N = 2), dice (N = 6), birthdays (N = 365)...
+
+P(X) = 1/(b-a) if x is in [a,b], otherwise, P(X) = 0
 
 16. Normal distribution:
 1) How to calculate probability of normal distribution:
