@@ -204,7 +204,7 @@ E(X) = μ = Σ (xi × P(xi))
 * is also called the mean of the probability distribution
 
 4) Variance of a Random Variable
-V(X) = σ2 = Σ[{X − E(X)}2 × P(X) ]
+V(X) = σ2 = Σ[{X − E(X)}**2 × P(X) ]
 
 5) Standard Deviation of the Probability Distribution
 σ=√V(X)
@@ -214,6 +214,7 @@ V(X) = σ2 = Σ[{X − E(X)}2 × P(X) ]
 Binomial variable: only two kinds of outcome: true vs. false; yes vs. no, etc
 1) the probability of successes in n binomial trials:
 http://www.intmath.com/counting-probability/12-binomial-probability-distributions.php
+* Bernoulli distribution: flip coin for once
 
 2) Mean and Variance of Binomial Distribution:
 E(X) = μ = np
@@ -223,7 +224,7 @@ V(X) = σ2 = npq
 
 13. The Poisson Probability Distribution
 http://www.intmath.com/counting-probability/13-poisson-probability-distribution.php
-Time of success in two disjoint time intervals are independent
+Time of success in two disjoint time(or distance, area, volume, etc) intervals are independent
 - car accident
 - death rate in army due to horse kicking
 - birth defect or mutation
@@ -310,6 +311,14 @@ https://www.khanacademy.org/math/statistics-probability/significance-tests-one-s
 - Type of errors:
 In statistical hypothesis testing, a type I error is the incorrect rejection of a true null hypothesis (a "false positive"), while a type II error is incorrectly retaining a false null hypothesis (a "false negative").
 
+- t-test:
+*When sample size<30, the sampling distribution of mean follows t-distribution, and instead of using z-table, we use t-table to find the t-values. t-distribution is defined by the "degree of freedom(DF)". If the sample size=21, then DF=20. The bigger DF is, the "skinnier" the t-distribution curve is, and the thinner the curve tail is, therefore the probability density decreases when DF increase.
+* In general, when the sample size<30, we'll assume that the original population is normally distributed.
+* only consider one/two tails for t-distribution when checking the t-table, and both situations here are talking about symetrical
+
+- One sample and two sample tests:
+http://facweb.cs.depaul.edu/sjost/csc423/documents/test-descriptions.htm
+
 19. Relationship between 2 quantitative variables:
 y = a+bx
 b = Slope = (N∑XY - (∑X)(∑Y)) / (N∑X**2 - (∑X)**2)
@@ -323,10 +332,11 @@ Predict a dependent continuous vale
 Predict the probability of a value, bounded between (0,1)
 * Changing the $\beta_0$ value shifts the curve horizontally, whereas changing the $\beta_1$ value changes the slope of the curve.
 * Positive coefficients increase the log-odds of the response (and thus increase the probability), and negative coefficients decrease the log-odds of the response (and thus decrease the probability).
+* logistic regression finds linear correlation between the log-odds and x, so log(p/1-p)=b+ax, here odds=p/1-p
 
 3) Cross Validation (CV):
 - CV is used to select the best model to train. Here, "two different models" would be: linear regression vs neural network. Once we have used cross-validation to select the better performing model, we train that model (whether it be the linear regression or the neural network) on all the data. 
-- k-fold CV: k iterations over the sample data using a proportion for training and CV
+- k-fold CV: k iterates over the sample data using a proportion for training and CV
 - After k-fold cross validation, we’ll get k different model estimation errors (e1, e2 …..ek)(MSE for quantitative responses, misclassification rate for qualtative responses). Then we take standard deviation of all errors. Lower value of standard deviation suggests our model does not vary a lot with different subset of training data.
 4) Over-fitting:
 Over-fitting is normally caused by high model complexity over the training data.
@@ -343,9 +353,12 @@ This is not a statement of causation.
 $\beta_1$ would be negative if an increase in temperature was associated with a decrease in rentals.
 
 7)Ways to measure accuracy of linear regression model:
-- MAE: mean of error
-- MSE: mean of error square(variance)
-- RMSE: mean of standard diviation
+Mathematically, if θ̂is an estimator forθ, then
+- MBE(Bias Error): Bias[θ̂]=E[θ̂ −θ],
+- Variance Error: Var[θ̂]=E[(θ̂ −E[θ̂])**2]
+(Irreducible Error)
+- MSE: mean of error square(variance). MSE[θ̂]=E[(θ̂ −θ)**2]. MSE = Var[θ̂]+(Bias[θ̂])**2. If bias = 0, then Var = MSE
+- MAE: mean of error. MAE[θ̂]=E[|(θ̂ −θ)|]
 - Cross Validation: evaluating the variance/different models
 
 
