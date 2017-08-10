@@ -108,7 +108,7 @@ Statistics:
 1) In general, n distinct objects can be arranged in n! ways.
 2) The number of permutations of n distinct objects taken r at a time, Pnr=n*(n-1)*(n-2)...*(n-(r-1))
 3) The number of different permutations of n objects of which n1 are of one kind, n2 are of a second kind, ... nk are of a k-th kind is n!/(n1!*n2!*...nk!)
-4) There are \displaystyle{\left({n}-{1}\right)}!(n−1)! ways to arrange n distinct objects in a circle (where the clockwise and anti-clockwise arrangements are regarded as distinct.)
+4) There are (n−1)! ways to arrange n distinct objects in a circle (where the clockwise and anti-clockwise arrangements are regarded as distinct.)
 w
 2. Combination:
 1) Cnr=Pnr/r!
@@ -204,7 +204,7 @@ E(X) = μ = Σ (xi × P(xi))
 * is also called the mean of the probability distribution
 
 4) Variance of a Random Variable
-V(X) = σ2 = Σ[{X − E(X)}2 × P(X) ]
+V(X) = σ2 = Σ[{X − E(X)}**2 × P(X) ]
 
 5) Standard Deviation of the Probability Distribution
 σ=√V(X)
@@ -214,6 +214,7 @@ V(X) = σ2 = Σ[{X − E(X)}2 × P(X) ]
 Binomial variable: only two kinds of outcome: true vs. false; yes vs. no, etc
 1) the probability of successes in n binomial trials:
 http://www.intmath.com/counting-probability/12-binomial-probability-distributions.php
+* Bernoulli distribution: flip coin for once
 
 2) Mean and Variance of Binomial Distribution:
 E(X) = μ = np
@@ -223,7 +224,7 @@ V(X) = σ2 = npq
 
 13. The Poisson Probability Distribution
 http://www.intmath.com/counting-probability/13-poisson-probability-distribution.php
-Time of success in two disjoint time intervals are independent
+Time of success in two disjoint time(or distance, area, volume, etc) intervals are independent
 - car accident
 - death rate in army due to horse kicking
 - birth defect or mutation
@@ -262,6 +263,7 @@ for a normal distribution:
 1) Descriptive Statistics
 IQR= Q3-Q1
 mode is the value of the number which appears the most frequent.
+*In statistics, a central tendency (or measure of central tendency) is a central or typical value for a probability distribution. It may also be called a center or location of the distribution. 
 
 2) inferential statistics:
 - confidence interval: 
@@ -310,6 +312,14 @@ https://www.khanacademy.org/math/statistics-probability/significance-tests-one-s
 - Type of errors:
 In statistical hypothesis testing, a type I error is the incorrect rejection of a true null hypothesis (a "false positive"), while a type II error is incorrectly retaining a false null hypothesis (a "false negative").
 
+- t-test:
+*When sample size<30, the sampling distribution of mean follows t-distribution, and instead of using z-table, we use t-table to find the t-values. t-distribution is defined by the "degree of freedom(DF)". If the sample size=21, then DF=20. The bigger DF is, the "skinnier" the t-distribution curve is, and the thinner the curve tail is, therefore the probability density decreases when DF increase.
+* In general, when the sample size<30, we'll assume that the original population is normally distributed.
+* only consider one/two tails for t-distribution when checking the t-table, and both situations here are talking about symetrical
+
+- One sample and two sample tests:
+http://facweb.cs.depaul.edu/sjost/csc423/documents/test-descriptions.htm
+
 19. Relationship between 2 quantitative variables:
 y = a+bx
 b = Slope = (N∑XY - (∑X)(∑Y)) / (N∑X**2 - (∑X)**2)
@@ -323,10 +333,11 @@ Predict a dependent continuous vale
 Predict the probability of a value, bounded between (0,1)
 * Changing the $\beta_0$ value shifts the curve horizontally, whereas changing the $\beta_1$ value changes the slope of the curve.
 * Positive coefficients increase the log-odds of the response (and thus increase the probability), and negative coefficients decrease the log-odds of the response (and thus decrease the probability).
+* logistic regression finds linear correlation between the log-odds and x, so log(p/1-p)=b+ax, here odds=p/1-p
 
 3) Cross Validation (CV):
 - CV is used to select the best model to train. Here, "two different models" would be: linear regression vs neural network. Once we have used cross-validation to select the better performing model, we train that model (whether it be the linear regression or the neural network) on all the data. 
-- k-fold CV: k iterations over the sample data using a proportion for training and CV
+- k-fold CV: k iterates over the sample data using a proportion for training and CV
 - After k-fold cross validation, we’ll get k different model estimation errors (e1, e2 …..ek)(MSE for quantitative responses, misclassification rate for qualtative responses). Then we take standard deviation of all errors. Lower value of standard deviation suggests our model does not vary a lot with different subset of training data.
 4) Over-fitting:
 Over-fitting is normally caused by high model complexity over the training data.
@@ -343,17 +354,30 @@ This is not a statement of causation.
 $\beta_1$ would be negative if an increase in temperature was associated with a decrease in rentals.
 
 7)Ways to measure accuracy of linear regression model:
-- MAE: mean of error
-- MSE: mean of error square(variance)
-- RMSE: mean of standard diviation
+Mathematically, if θ̂is an estimator forθ, then
+- MBE(Bias Error): Bias[θ̂]=E[θ̂ −θ],
+- Variance Error: Var[θ̂]=E[(θ̂ −E[θ̂])**2]
+(Irreducible Error)
+- MSE: mean of error square(variance). MSE[θ̂]=E[(θ̂ −θ)**2]. MSE = Var[θ̂]+(Bias[θ̂])**2. If bias = 0, then Var = MSE
+- MAE: mean of error. MAE[θ̂]=E[|(θ̂ −θ)|]
 - Cross Validation: evaluating the variance/different models
 
 
 21. Sensitivity and Specificity:
+1) Ways to measure accuracy of logistic regression model:
+ROC:
 - True positive rate (or sensitivity): TPR=TP/(TP+FN)
 - False positive rate: FPR=FP/(FP+TN)FPR=FP/(FP+TN)
 - True negative rate (or specificity): TNR=TN/(FP+TN)
+* for each (probability/classification)threshold, there will be a pair: (sensitivity,specificity)
 https://stats.stackexchange.com/questions/61829/relation-between-true-positive-false-positive-false-negative-and-true-negative
-- ROC curve plots TP and TN when using different predicting positive threshold 
- 
+- ROC curve plots plotting "sensitivity" against "1-specificity" using all possible predicting threshold(range from 0 to 1)
+- ROC helps visualise the impact of a chosen threshold(depends on if the goal is to maximize TP or minimize the FP)
+- For different modeling, the goal is to minimize the AUC(area under curve)
+- FP: Type I error; FN: Type II error
+- AUC: area under curve
+* the AUC of a classifier is equal to the probability that the classifier will rank(by the probability of being positive,what the logistic regression model is predicting) a randomly chosen positive example higher than a randomly chosen negative example. Therefore, the bigger the AUC is, the better the model performs
+
+Misclassification rate:
+- error rate for only a single threshold
  
