@@ -263,6 +263,7 @@ for a normal distribution:
 1) Descriptive Statistics
 IQR= Q3-Q1
 mode is the value of the number which appears the most frequent.
+*In statistics, a central tendency (or measure of central tendency) is a central or typical value for a probability distribution. It may also be called a center or location of the distribution. 
 
 2) inferential statistics:
 - confidence interval: 
