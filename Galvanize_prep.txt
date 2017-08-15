@@ -202,9 +202,21 @@ P(X) or P(x1), P(x2)...
 * X represent a discrete random variable
 E(X) = μ = Σ (xi × P(xi))
 * is also called the mean of the probability distribution
+* we "expect" each of the possible values to occur with the given frequencies.
+* it is a weighted average of the possible values, here probability is the weight
+* Bernoulli(p) random variable. Find E(X): E(X) = p x 1 + (1 − p) x 0 = p
+* If X and Y are random variables on a sample space Ω then: E(X + Y) = E(X) + E(Y);E(aX + b) = aE(X) + b
+Roll two dice and let X be the sum. Find E(X):
+Let X1 be the value on the first die and let X2 be the value on the second die. Since X = X1 + X2 we have E(X) = E(X1) + E(X2). Earlier we computed that E(X1) = E(X2) = 3.5, therefore E(X) = 7.
+* For infinite random variables the mean does not always exist
+ 
 
 4) Variance of a Random Variable
 V(X) = σ2 = Σ[{X − E(X)}**2 × P(X) ]
+Properties of variance:
+1. If X and Y are independent then Var(X + Y ) = Var(X) + Var(Y )
+2. For constants a and b, Var(aX + b) = a2Var(X)
+3. Var(X) = E(X2) − E(X)2
 
 5) Standard Deviation of the Probability Distribution
 σ=√V(X)
@@ -241,8 +253,9 @@ Here k is the number of tails before the first head, and the probability of havi
 14. Exponential distribution:
 P(X) = λ e**(−λx)
 
-15. Uniform Distribution:
+15. Uniform Distribution (continuous and discrete:http://www.statisticshowto.com/uniform-distribution/):
 The uniform distribution models any situation where all the outcomes are equally likely. Examples: fair coins (N = 2), dice (N = 6), birthdays (N = 365)...
+* Uniform distribution is a probability distribution that has constant probability
 
 P(X) = 1/(b-a) if x is in [a,b], otherwise, P(X) = 0
 
@@ -381,3 +394,10 @@ https://stats.stackexchange.com/questions/61829/relation-between-true-positive-f
 Misclassification rate:
 - error rate for only a single threshold
  
+ 
+Calculus:
+1. Definite Integral:
+1) Reverse power rule:
+the antiderivative of f(x) is F(x) is: for example: Sx**2dx: here the power is 2, so the antiderivative(integral) should have a +1 power, which is 2+1=3, and also we need to devide the whole f(x) with the new power(3 in this case), so Sx**2dx=x**3/3
+2) Evaluate definite integral:
+https://www.khanacademy.org/math/integral-calculus/definite-integral-evaluation-ic
