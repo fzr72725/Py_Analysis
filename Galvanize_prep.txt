@@ -250,8 +250,21 @@ coin flips (Bernoulli trials).
 P(X) = [(1-p)**k]P
 Here k is the number of tails before the first head, and the probability of having a head in a flip is p
 
-14. Exponential distribution:
+14. Exponential distribution: It models the waiting time for a continuous process to change state
 P(X) = λ e**(−λx)
+* Exponential distribution is memory less:
+Suppose that the probability that a taxi arrives
+within the first five minutes is p. If I wait five minutes and in fact no taxi arrives, then the
+probability that a taxi arrives within the next five minutes is still p.
+
+By contrast, suppose I were to instead go to Kendall Square subway station and wait for
+the next inbound train. Since the trains are coordinated to follow a schedule (e.g., roughly
+12 minutes between trains), if I wait five minutes without seeing a train then there is a far
+greater probability that a train will arrive in the next five minutes. In particular, waiting
+time for the subway is not memoryless, and a better model would be the uniform distribution
+on the range [0,12].
+
+* The exponential distribution is the precisely the continuous counterpart of the geometric distribution, which models the waiting time for a discrete process to change state.
 
 15. Uniform Distribution (continuous and discrete:http://www.statisticshowto.com/uniform-distribution/):
 The uniform distribution models any situation where all the outcomes are equally likely. Examples: fair coins (N = 2), dice (N = 6), birthdays (N = 365)...
