@@ -234,6 +234,17 @@ V(X) = σ2 = npq
 
 3) Binomial probability distribution is always finite. You can only have a finite number of x.
 
+4) Polling /conversion rate problem:
+https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading6b.pdf
+To run the poll a pollster selects n people at random and asks ’Do you support candidate
+A or candidate B. Thus we can view the poll as a **sequence of n independent Bernoulli(p0)**
+trials, X1, X2, . . . , Xn, where Xi is 1 if the i person prefers A and 0 if they prefer B. The
+fraction of people polled that prefer A is just the average X.
+We know that each Xi ∼ Bernoulli(p0) so,
+E(Xi) = p0 and σXi = √p0(1 − p0).
+Therefore, the central limit theorem tells us that
+X ≈ N(p0, σ/√n), where σ = √p0(1 − p0).
+
 13. The Poisson Probability Distribution
 http://www.intmath.com/counting-probability/13-poisson-probability-distribution.php
 Time of success in two disjoint time(or distance, area, volume, etc) intervals are independent
