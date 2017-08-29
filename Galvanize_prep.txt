@@ -365,6 +365,8 @@ a = mean(Y)-bmean(X)
 20. Modeling:
 1) Linear Regression:
 Predict a dependent continuous vale
+* The standard error of a correlation coefficient is used to determine the confidence intervals around a true correlation of zero. If your correlation coefficient falls outside of this range, then it is significantly different than zero.
+* Use the standard error of the coefficient to measure the precision of the estimate of the coefficient. The smaller the standard error, the more precise the estimate. Dividing the coefficient by its standard error calculates a t-value. If the p-value associated with this t-statistic is less than your alpha level, you conclude that the coefficient is significantly different from zero.
 
 2) Logistic Regression:
 Predict the probability of a value, bounded between (0,1)
